@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class MenuMinuman extends Model
+class MenuMakananUtamaModel extends Model
 {
-    protected $table            = 'menuminuman';
+    protected $table            = 'menumakananutama';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $allowedFields    = ['id_kategori','menu_makanan', 'desc_makanan', 'harga', 'gambar_makanan'];

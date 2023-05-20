@@ -41,6 +41,10 @@ $routes->resource('bukumenu', ['controller'=>'BukuMenuController']);
 $routes->resource('menumakanan', ['controller'=>'MakananController']);
 $routes->post('menumakanan/ubah/(:num)', 'MakananController::update/$1');
 
+$routes->resource('menumakananpembuka', ['controller'=>'MakananPembukaController']);
+$routes->resource('menumakananutama', ['controller'=>'MakananUtamaController']);
+$routes->resource('menuminuman', ['controller'=>'MinumanController']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
