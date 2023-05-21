@@ -65,7 +65,8 @@ class MakananPembukaController extends ResourceController
             'menu_makanan' => 'required',
             'desc_makanan' => 'required',
             'harga' => 'required',
-            'gambar_makanan' => 'uploaded[gambar_makanan]|max_size[gambar_makanan,2048]|is_image[gambar_makanan]|mime_in[gambar_makanan,image/jpg,image/jpeg,image/png]',
+            //'gambar_makanan' => 'uploaded[gambar_makanan]|max_size[gambar_makanan,2048]|is_image[gambar_makanan]|mime_in[gambar_makanan,image/jpg,image/jpeg,image/png]',
+            'gambar_makanan' => 'required',
         ]);
 
         if(!$rules){
@@ -76,9 +77,9 @@ class MakananPembukaController extends ResourceController
         };
 
         //uploading gambar 
-        $gambar_makanan = $this->request->getFile('gambar_makanan');
+        /*$gambar_makanan = $this->request->getFile('gambar_makanan');
         $namaGambar= $gambar_makanan->getRandomName();
-        $gambar_makanan->move('gambarMakanan', $namaGambar);
+        $gambar_makanan->move('gambarMakanan', $namaGambar);*/
 
 
         $this->model->insert([
@@ -86,7 +87,8 @@ class MakananPembukaController extends ResourceController
             'menu_makanan' => esc($this->request->getVar('menu_makanan')),
             'desc_makanan' => esc($this->request->getVar('desc_makanan')),
             'harga' => esc($this->request->getVar('harga')),
-            'gambar_makanan' => $namaGambar,
+            //'gambar_makanan' => $namaGambar,
+            'gambar_makanan' => esc($this->request->getVar('gambar_makanan')),
 
         ]);
         $response =[
@@ -119,7 +121,7 @@ class MakananPembukaController extends ResourceController
             'desc_makanan' => 'required',
             'harga' => 'required',
             'gambar_makanan' => 'required',
-            'gambar_makanan' => 'max_size[gambar_makanan,2048]|is_image[gambar_makanan]|mime_in[gambar_makanan,image/jpg,image/jpeg,image/png]',
+            //'gambar_makanan' => 'max_size[gambar_makanan,2048]|is_image[gambar_makanan]|mime_in[gambar_makanan,image/jpg,image/jpeg,image/png]',
 
         ]);
 
@@ -131,7 +133,7 @@ class MakananPembukaController extends ResourceController
         };
 
         //uploading gambar 
-        $gambar_makanan = $this->request->getFile('gambar_makanan');
+        /*$gambar_makanan = $this->request->getFile('gambar_makanan');
         if($gambar_makanan){
             $namaGambar= $gambar_makanan->getRandomName();
             $gambar_makanan->move('gambarMakanan', $namaGambar);
@@ -143,7 +145,7 @@ class MakananPembukaController extends ResourceController
             
         }else{
             $namaGambar = $this->request->getPost('gambarLama');
-        };
+        };*/
         
         
 
@@ -152,7 +154,8 @@ class MakananPembukaController extends ResourceController
             'menu_makanan' => esc($this->request->getVar('menu_makanan')),
             'desc_makanan' => esc($this->request->getVar('desc_makanan')),
             'harga' => esc($this->request->getVar('harga')),
-            'gambar_makanan' => $namaGambar,
+            //'gambar_makanan' => $namaGambar,
+            'gambar_makanan' => esc($this->request->getVar('gambar_makanan')),
 
         ]);
         $response =[
