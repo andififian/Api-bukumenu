@@ -15,11 +15,7 @@ class Minuman extends Migration
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'id_kategori' => [
-                'type'           => 'INT',
-                'constraint'     => 5,
-                'unsigned'       => true,
-            ],
+            
             'menu_makanan' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
@@ -48,7 +44,7 @@ class Minuman extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->addForeignKey('id_kategori', 'kategorimenu', 'id');
+        
         $this->forge->createTable('menuminuman');
     }
 

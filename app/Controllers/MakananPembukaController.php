@@ -61,7 +61,7 @@ class MakananPembukaController extends ResourceController
     public function create()
     {
         $rules= $this->validate([
-            'id_kategori' => 'required',
+            
             'menu_makanan' => 'required',
             'desc_makanan' => 'required',
             'harga' => 'required',
@@ -83,7 +83,7 @@ class MakananPembukaController extends ResourceController
 
 
         $this->model->insert([
-            'id_kategori' => esc($this->request->getVar('id_kategori')),
+            
             'menu_makanan' => esc($this->request->getVar('menu_makanan')),
             'desc_makanan' => esc($this->request->getVar('desc_makanan')),
             'harga' => esc($this->request->getVar('harga')),
@@ -116,7 +116,7 @@ class MakananPembukaController extends ResourceController
     public function update($id = null)
     {
         $rules= $this->validate([
-            'id_kategori' => 'required',
+            
             'menu_makanan' => 'required',
             'desc_makanan' => 'required',
             'harga' => 'required',
@@ -150,7 +150,7 @@ class MakananPembukaController extends ResourceController
         
 
         $this->model->update($id,[
-            'id_kategori' => esc($this->request->getVar('id_kategori')),
+            
             'menu_makanan' => esc($this->request->getVar('menu_makanan')),
             'desc_makanan' => esc($this->request->getVar('desc_makanan')),
             'harga' => esc($this->request->getVar('harga')),
