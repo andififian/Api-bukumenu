@@ -62,11 +62,11 @@ class MakananController extends ResourceController
     public function create()
     {
         $rules= $this->validate([
-            'kategori' => 'required',
+            
             'menu_makanan' => 'required',
             'desc_makanan' => 'required',
             'harga' => 'required',
-            'gambar_makanan' => 'uploaded[gambar_makanan]|max_size[gambar_makanan,2048]|is_image[gambar_makanan]|mime_in[gambar_makanan,image/jpg,image/jpeg,image/png]',
+            'gambar_makanan' => 'required',
         ]);
 
         if(!$rules){
@@ -76,18 +76,18 @@ class MakananController extends ResourceController
             return $this->failValidationErrors($response);
         };
 
-        //uploading gambar 
+        /*//uploading gambar 
         $gambar_makanan = $this->request->getFile('gambar_makanan');
         $namaGambar= $gambar_makanan->getRandomName();
-        $gambar_makanan->move('gambarMakanan', $namaGambar);
+        $gambar_makanan->move('gambarMakanan', $namaGambar);*/
 
 
         $this->model->insert([
-            'kategori' => esc($this->request->getVar('kategori')),
+            
             'menu_makanan' => esc($this->request->getVar('menu_makanan')),
             'desc_makanan' => esc($this->request->getVar('desc_makanan')),
             'harga' => esc($this->request->getVar('harga')),
-            'gambar_makanan' => $namaGambar,
+            'gambar_makanan' => esc($this->request->getVar('gambar_makanan')),
 
         ]);
         $response =[
@@ -115,12 +115,12 @@ class MakananController extends ResourceController
     public function update($id = null)
     {
         $rules= $this->validate([
-            'kategori' => 'required',
+            
             'menu_makanan' => 'required',
             'desc_makanan' => 'required',
             'harga' => 'required',
             'gambar_makanan' => 'required',
-            'gambar_makanan' => 'max_size[gambar_makanan,2048]|is_image[gambar_makanan]|mime_in[gambar_makanan,image/jpg,image/jpeg,image/png]',
+            //'gambar_makanan' => 'max_size[gambar_makanan,2048]|is_image[gambar_makanan]|mime_in[gambar_makanan,image/jpg,image/jpeg,image/png]',
 
         ]);
 
@@ -132,7 +132,7 @@ class MakananController extends ResourceController
         };
 
         //uploading gambar 
-        $gambar_makanan = $this->request->getFile('gambar_makanan');
+        /*$gambar_makanan = $this->request->getFile('gambar_makanan');
         if($gambar_makanan){
             $namaGambar= $gambar_makanan->getRandomName();
             $gambar_makanan->move('gambarMakanan', $namaGambar);
@@ -144,16 +144,16 @@ class MakananController extends ResourceController
             
         }else{
             $namaGambar = $this->request->getPost('gambarLama');
-        };
+        };*/
         
         
 
         $this->model->update($id,[
-            'kategori' => esc($this->request->getVar('kategori')),
+            
             'menu_makanan' => esc($this->request->getVar('menu_makanan')),
             'desc_makanan' => esc($this->request->getVar('desc_makanan')),
             'harga' => esc($this->request->getVar('harga')),
-            'gambar_makanan' => $namaGambar,
+            'gambar_makanan' => esc($this->request->getVar('gambar_makanan')),
 
         ]);
         $response =[

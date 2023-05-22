@@ -9,7 +9,7 @@ class MenuMinuman extends Model
     protected $table            = 'menuminuman';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['id_kategori','menu_makanan', 'desc_makanan', 'harga', 'gambar_makanan'];
+    protected $allowedFields    = ['menu_makanan', 'desc_makanan', 'harga', 'gambar_makanan'];
 
     // Dates
     protected $useTimestamps = true;

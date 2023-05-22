@@ -9,7 +9,7 @@ class MenuPembukaModel extends Model
     protected $table            = 'menumakananpembuka';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['id_kategori','menu_makanan', 'desc_makanan', 'harga', 'gambar_makanan'];
+    protected $allowedFields    = ['menu_makanan', 'desc_makanan', 'harga', 'gambar_makanan'];
 
     // Dates
     protected $useTimestamps = true;

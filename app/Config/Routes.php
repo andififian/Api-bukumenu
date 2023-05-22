@@ -42,8 +42,13 @@ $routes->resource('menumakanan', ['controller'=>'MakananController']);
 $routes->post('menumakanan/ubah/(:num)', 'MakananController::update/$1');
 
 $routes->resource('menumakananpembuka', ['controller'=>'MakananPembukaController']);
+$routes->post('menumakananpembuka/ubah/(:num)', 'MakananPembukaController::update/$1');
+
 $routes->resource('menumakananutama', ['controller'=>'MakananUtamaController']);
+$routes->post('menumakananutama/ubah/(:num)', 'MakananUtamaController::update/$1');
+
 $routes->resource('menuminuman', ['controller'=>'MinumanController']);
+$routes->post('menuminuman/ubah/(:num)', 'MinumanController::update/$1');
 
 /*
  * --------------------------------------------------------------------
