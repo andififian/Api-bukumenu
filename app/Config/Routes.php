@@ -40,15 +40,21 @@ $routes->resource('bukumenu', ['controller'=>'BukuMenuController']);
 
 $routes->resource('menumakanan', ['controller'=>'MakananController']);
 $routes->post('menumakanan/ubah/(:num)', 'MakananController::update/$1');
+$routes->delete('menumakanan/(:num)', 'MakananController::delete/$1');
 
 $routes->resource('menumakananpembuka', ['controller'=>'MakananPembukaController']);
 $routes->post('menumakananpembuka/ubah/(:num)', 'MakananPembukaController::update/$1');
+$routes->delete('menumakananpembuka/(:num)', 'MakananPembukaController::delete/$1');
+
 
 $routes->resource('menumakananutama', ['controller'=>'MakananUtamaController']);
 $routes->post('menumakananutama/ubah/(:num)', 'MakananUtamaController::update/$1');
+$routes->delete('menumakananutama/(:num)', 'MakananUtamaController::delete/$1');
+
 
 $routes->resource('menuminuman', ['controller'=>'MinumanController']);
 $routes->post('menuminuman/ubah/(:num)', 'MinumanController::update/$1');
+$routes->delete('menuminuman/(:num)', 'MinumanController::delete/$1');
 
 /*
  * --------------------------------------------------------------------
